@@ -1,0 +1,251 @@
+@import url("https://fonts.googleapis.com/css?family=Roboto+Condensed|Roboto+Slab|Roboto:300&display=swap|Montserrat");
+body {
+  padding: 0;
+  margin: 0;
+}
+
+.content-render {
+  position: relative;
+  margin-top: 52px;
+}
+
+.app-bar .brand {
+  font-family: "Roboto Condensed";
+  line-height: 80px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.app-bar-menu {
+  float: right !important;
+}
+
+.app-bar .brand .logo {
+  width: 40px;
+  height: 40px;
+  padding: 10px 10px;
+}
+
+.app-bar .brand .title {
+  display: block;
+  padding: 0px 10px;
+  text-decoration: none;
+  font-size: 1.4rem;
+  text-shadow: -2px 0 #23008e, 2px 0px 0 #730035, 0px -2px 0 #ff8100, 0px 0px 3px #4b00ff, 0px 1px 0 #f00;
+}
+
+.app-bar .app-bar-menu {
+  display: flex;
+  align-items: center;
+  height: 52px;
+}
+
+.app-bar-menu li a,
+.sidebar-menu li a {
+  border: 1px solid transparent;
+  text-shadow: 1px 1px 3px rgba(130, 130, 130, 0.25);
+}
+
+.app-bar-menu li:hover a {
+  transition: all 0.2s linear;
+  box-shadow: 0 3.2px 7.2px 0 rgba(0, 0, 0, 0.132), 0 0.6px 1.8px 0 rgba(0, 0, 0, 0.108);
+  border: 1px solid rgba(248, 248, 248, 0.016);
+  text-shadow: 0 1.6px 3.6px 0 rgba(0, 0, 0, 0.132), 0 0.3px 0.9px 0 rgba(0, 0, 0, 0.108);
+}
+
+.app-bar-menu li:focus,
+.app-bar-menu li a:focus {
+  outline: none !important;
+  border: none;
+}
+
+.app-bar .hamburger {
+  display: none;
+  visibility: hidden;
+}
+
+.menu-navigation li a .icon {
+  width: 40px;
+  height: 40px;
+  justify-content: center;
+  align-items: center;
+  display: flex;
+}
+
+.menu-navigation li a .title {
+  padding: 8px 0px;
+}
+
+.sidebar {
+  margin-top: 52px;
+  box-shadow: 0 1.6px 3.6px 0 rgba(0, 0, 0, 0.132), 0 0.3px 0.9px 0 rgba(0, 0, 0, 0.108) !important;
+}
+
+#sidebar-toggle-2 {
+  width: 52px;
+  height: 52px;
+  border-radius: 0px;
+  font-size: 2rem;
+}
+
+.sidebar-menu li a img,
+.app-bar-menu li a img {
+  width: 23.33px;
+  height: 23.33px;
+  margin-right: 0.33rem;
+}
+
+.container h1.title {
+  font-family: "Roboto Condensed";
+  color: #ffffff;
+  text-shadow: -2px 0 #23008e, 2px 0px 0 #730035, 0px -2px 0 #ff8100, 0px 0px 3px #4b00ff, 0px 1px 0 #f00;
+}
+
+#categories .has-image .img {
+  background-size: cover;
+}
+
+.tags *[rel=tag] {
+  display: inline-block;
+  padding: 4px 12px;
+  border-radius: 50px;
+  background-color: #333333;
+  color: white;
+  margin-right: 8px;
+  font-size: 0.6rem;
+}
+
+#menu-social-menu {
+  list-style: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#menu-social-menu li a {
+  padding: 8px;
+  text-decoration: none;
+  margin-right: 10px;
+}
+
+.wp-block-cover, .wp-block-cover-image {
+  position: fixed !important;
+  left: 0;
+  top: 0;
+  z-index: -1;
+  height: 300px;
+}
+.wp-block-cover .wp-block-cover__inner-container, .wp-block-cover-image .wp-block-cover__inner-container {
+  display: none;
+}
+
+.menu-tags-blog-container {
+  display: block;
+  position: relative;
+  font-size: 0.875rem;
+  width: calc(100% - 1rem);
+  margin: 8px auto;
+  border-radius: 2px;
+  border: 1px solid #dfdfdf;
+  box-shadow: 0 1.6px 3.6px 0 rgba(0, 0, 0, 0.132), 0 0.3px 0.9px 0 rgba(0, 0, 0, 0.108);
+}
+.menu-tags-blog-container ul {
+  list-style: none;
+  margin: 0;
+}
+.menu-tags-blog-container ul li a {
+  padding: 8px 12px;
+  line-height: 2rem;
+  display: block;
+  font-size: 1.2rem;
+  font-family: "Roboto";
+  border-bottom: 1px solid rgba(200, 200, 200, 0.1);
+  text-decoration: none;
+}
+.menu-tags-blog-container ul li a:hover, .menu-tags-blog-container ul li.current-menu-item a {
+  text-decoration: none;
+  transition: all 0.2s linear;
+}
+
+.navigation .nav-links a {
+  text-decoration: none;
+  font-family: "Roboto";
+  font-size: 1.2rem;
+}
+
+.navigation .nav-links .page-numbers.current {
+  font-size: 1rem;
+  font-family: "Roboto";
+}
+
+/*Colors Scheme*/
+.light {
+  background-color: #f8f8f8;
+}
+.light .app-bar {
+  background-color: #333333;
+}
+.light #sidebar-toggle-2 {
+  background-color: #3B0008;
+}
+.light .app-bar-menu li:hover a,
+.light .app-bar-menu .current-menu-item {
+  background-color: #0077D9 !important;
+  color: #ffffff !important;
+}
+.light .app-bar .brand .title {
+  color: #f8f8f8;
+}
+.light .app-bar-menu li a {
+  color: #f8f8f8 !important;
+}
+.light .sidebar {
+  background-color: #0077D9;
+}
+.light .sidebar li a {
+  color: #f8f8f8;
+}
+.light .sidebar-menu li:hover a,
+.light .sidebar-menu .current-menu-item {
+  background-color: rgba(248, 248, 248, 0.2);
+  box-shadow: 0 1.6px 3.6px 0 rgba(0, 0, 0, 0.132), 0 0.3px 0.9px 0 rgba(0, 0, 0, 0.108) !important;
+  color: #f8f8f8 !important;
+}
+.light #menu-tags-blog li a:hover,
+.light #menu-tags-blog li.current-menu-item a {
+  background-color: #004D8C;
+  color: #f8f8f8 !important;
+}
+.light #menu-social-menu li a {
+  color: #333333;
+}
+.light .menu-tags-blog-container {
+  background-color: #ffffff;
+}
+.light .menu-tags-blog-container ul li a {
+  color: #333333;
+}
+.light .navigation .nav-links a {
+  color: #1A32CC;
+}
+
+.dark {
+  background-color: #333333;
+}
+.dark .app-bar {
+  background-color: #000000;
+}
+
+@media screen and (min-width: 0px) {
+  #categories .has-image .img {
+    height: 100px;
+  }
+}
+@media screen and (min-width: 768px) {
+  #categories .has-image .img {
+    height: 100%;
+  }
+}
+
+/*# sourceMappingURL=style.css.map */
