@@ -10,7 +10,7 @@
  * @link https://codex.wordpress.org/Template_Hierarchy
  *
  * @package WordPress
- * @subpackage fluent
+ * @subpackage hdsfluent
  * @since 1.0
  * @version 1.0
  */
