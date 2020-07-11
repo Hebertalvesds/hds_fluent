@@ -21,5 +21,8 @@ get_header(); ?>
         </span>
         <?php echo $post->post_content; ?>
     </div>
+    <div class="cell-sm-10 cell-xl-8 p-5 p-20-lg mt-2">
+		<?php comments_template();?>
+	</div>
 </div>
 <?php get_footer(); ?>
