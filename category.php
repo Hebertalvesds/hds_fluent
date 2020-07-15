@@ -4,9 +4,6 @@ $page_class = get_the_category()[0]->slug;
 $stick = get_option('stick_posts');
 $query = new WP_Query( 'p=' . $stick[0] );
 ?>
-<div class="container <?php echo $page_class ?> pt-10 pb-10 pl-5">
-    <h1 class="title"><?php echo get_the_category()[0]->name ?></h1>
-</div>
 <div class="container <?php echo $page_class?>" id="categories">
     <div class="row">
         <div class="cell-sm-12 cell-lg-3 d-none-sm d-block-lg">

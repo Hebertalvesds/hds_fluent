@@ -25,19 +25,6 @@
         <title>
                 <?php echo bloginfo('name') ?>
         </title>
-        <style>
-        .menu-navigation{
-            background: var(--<?php echo get_the_category()[0]->slug ?>-color) !important;
-        }
-        .branding{
-            color: var(--<?php echo get_the_category()[0]->slug ?>-color) !important;
-        }
-        <?php if(is_user_logged_in()):?>
-            .app-bar{
-                margin-top: 32px;
-            }
-        <?php endif; ?>
-        </style>
     </head>
     <body class="light" data-role="touch">
     <div>
@@ -46,11 +33,7 @@
             <?php get_template_part( 'template-parts/header/header', 'brand' ) ?>
             <?php get_template_part( 'template-parts/navigation/navigation', 'top' ); ?>
         </div>
-        <button class="button square pos-absolute pos-top-right alert no-shadow d-none-md" id="sidebar-toggle-2">
-            <span class="mif-menu"></span>
-        </button>
     </header>
-    <?php get_template_part( 'template-parts/navigation/navigation', 'left' ); ?>
-        <!-- ContentWordpress -->
-        <div class="content-render">
+    <!-- ContentWordpress -->
+    <div class="content-render">
         

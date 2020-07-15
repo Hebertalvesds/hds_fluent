@@ -28,59 +28,70 @@ body{
 }
 .content-render{
     position: relative;
-    margin-top: 52px;
+    margin-top: 80px;
 }
-.app-bar .brand{
-    font-family: $font-condensed;
-    line-height: 80px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-.app-bar-menu{
-    float: right !important;
-}
-.app-bar .brand .logo{
-    width: 40px;
-    height: 40px;
-    padding: 10px 10px;
-}
-.app-bar .brand .title{
-    display: block;
-    padding: 0px 10px;
-    text-decoration: none;
-    font-size: 1.4rem;
-    text-shadow: -2px 0 #23008e, 
-        2px 0px 0 #730035, 
-        0px -2px 0 #ff8100, 
-        0px 0px 3px #4b00ff, 
-        0px 1px 0 #f00;
-}
-.app-bar .app-bar-menu{
-    display: flex;
-    align-items: center;
-    height: 52px;
-}
-.app-bar-menu li a, 
-.sidebar-menu li a{
-    //text-shadow: -2px 0 #000000, 0px -2px 0 #0300b1, 2px 0px 0 #6900f3, 0px 0px 3px #000000, 0px 2px 0 #1000ff;
-    border: 1px solid transparent;
-    text-shadow: 1px 1px 3px rgba(130, 130, 130, 0.25);
-}
-.app-bar-menu li:hover a{
-    transition: all .2s linear;
-    box-shadow: $ms-depth-8;
-    border: 1px solid rgba(248, 248, 248, 0.016);
-    text-shadow: $ms-depth-4;
-}
-.app-bar-menu li:focus, 
-.app-bar-menu li a:focus{
-    outline: none !important;
-    border: none;
-}
-.app-bar .hamburger{
-    display: none;
-    visibility: hidden;
+.app-bar{
+    padding: 1rem;
+    .hamburger{
+        z-index: 1050;
+        margin: 1rem;
+    }
+    .app-bar-menu.opened{
+        height: 100vh;
+    }
+    .brand{
+        font-family: $font-condensed;
+        line-height: 80px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        .logo{
+            width: 40px;
+            height: 40px;
+            padding: 10px 10px;
+        }
+        .title{
+            display: block;
+            padding: 0px 10px;
+            text-decoration: none;
+            font-size: 1.4rem;
+            // text-shadow: -2px 0 #23008e, 
+            //     2px 0px 0 #730035, 
+            //     0px -2px 0 #ff8100, 
+            //     0px 0px 3px #4b00ff, 
+            //     0px 1px 0 #f00;
+        }
+    }
+    .app-bar-menu{
+        float: right !important;
+        display: flex;
+        align-items: center;
+        height: 52px;
+        font-family: $font-condensed;
+        li{
+            margin-right: 5px;
+            a{
+                font-size: 1.2rem !important;
+                border: 1px solid transparent;
+                img{
+                    width: 23.33px;
+                    height: 23.33px;
+                    margin-right: .33rem;
+                }
+            }
+        }
+        li:hover{
+            background-color: transparent !important;
+            a{
+            transition: all .2s linear;
+            text-shadow: $ms-depth-4;
+            }
+        }
+        li:focus, li a:focus{
+            outline: none !important;
+            border: none;
+        }
+    }
 }
 .menu-navigation li a .icon{
     width: 40px;
@@ -191,33 +202,20 @@ body{
 .light{
     background-color: $primary-light-color;
     .app-bar{
-        background-color: rgb(51, 51, 51);
+        background-color: rgb(255, 255, 255);
+        .brand .title { color: $primary-black-color; } 
     }
-    #sidebar-toggle-2{
-        background-color: #3B0008;
-    }
-    .app-bar-menu li:hover a,
-    .app-bar-menu .current-menu-item{
-        background-color: #0077D9 !important;
-        color: #ffffff !important;
-    }
-    .app-bar .brand .title { color: $primary-light-color; } 
-    .app-bar-menu li a{
-        color: $primary-light-color !important;
-    }
-    .sidebar{
-        background-color: #0077D9;
-        li a{
-            color: $primary-light-color;
+    .app-bar-menu{
+        li:hover a,
+        .current-menu-item a{
+            color: #0064a7 !important;
         }
-    }
-    .sidebar-menu li:hover a, 
-    .sidebar-menu .current-menu-item {
-        background-color: rgba(248, 248, 248, 0.2);
-        box-shadow: $ms-depth-4 !important;
-        color: $primary-light-color !important;
-        
-    }
+        li{
+            a{
+                color: $primary-black-color !important;
+            }
+        }
+    } 
     #menu-tags-blog li a:hover, 
     #menu-tags-blog li.current-menu-item a{
         background-color: #004D8C;
