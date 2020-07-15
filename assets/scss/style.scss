@@ -32,6 +32,7 @@ body{
 }
 .app-bar{
     padding: 1rem;
+    z-index: 2050;
     .hamburger{
         z-index: 1050;
         margin: 1rem;
@@ -119,7 +120,7 @@ body{
     height: 23.33px;
     margin-right: .33rem;
 }
-// Container by posts
+// Container by postsf
 .container h1.title{
     font-family: $font-condensed;
     color: #ffffff;
@@ -135,7 +136,7 @@ body{
         .content, .title{
             text-shadow: 1px 2px 6px rgba(51, 51, 51, .4);
         }
-        .img{background-size: cover};
+        background-size: cover;
     }
     .has-image::before{
         content: "";
@@ -161,6 +162,7 @@ body{
     }
     .card{
         text-transform: uppercase;
+        border-radius: 0px !important;
     }
     .card:hover{
         box-shadow: $ms-depth-8;

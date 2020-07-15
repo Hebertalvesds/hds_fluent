@@ -1,49 +1,47 @@
 <?php get_header();?>
-<div class="container d-flex <?php echo get_the_category()[0]->slug ?> <?php echo get_the_tags()[0]->slug ?> tag" style="flex-direction: column-reverse">
-    <?php 
-        if ( function_exists('yoast_breadcrumb') ) {
-            yoast_breadcrumb( '<p class="breadcrumbs ms-depth-4">','</p>' );
-        }
-    ?>
-    <button class="btn-more ms-depth-4" id="more-actions" v-on:click="HistoryBack()"><i class="ms-Icon ms-Icon--PageLeft"></i>
-    </button>
-</div>
-<div class="container <?php echo get_the_category()[0]->slug ?>" id="categories" style="padding-top:0;">
-    <?php while (have_posts()): the_post()?>
-        <?php $has_image = has_images_by_post_id($post) ? 'has-image' : ''; ?>
+<?php 
+$page_class = get_the_category()[0]->slug;
+$stick = get_option('stick_posts');
+$query = new WP_Query( 'p=' . $stick[0] );
+?>
+<div class="cel-fs-12 <?php echo $page_class?> categories" id="tags">
+    <div class="row">
+        <?php 
+            if ( function_exists('yoast_breadcrumb') ) {
+                yoast_breadcrumb( '<p class="breadcrumbs d-flex flex-justify-center p-4 m-0 cell-fs-12 text-upper bg-light">','</p>' );
+            }
+        ?>
+        <?php while (have_posts()): 
+            the_post()?>
+            <?php $has_image = has_images_by_post_id($post) ? 'has-image' : ''; ?>
             <?php $link_image = ($has_image) ? 
                                     get_background_image_header($post->post_content) != "" 
                                     ? get_background_image_header($post->post_content) : get_post_image($post->post_content) 
                                     :'';?>
-        <div class="card ms-depth-4 <?php echo $has_image?>" style="<?php echo $link_image ?>">
-            <div class="tags">
-                <?php echo get_the_tag_list() ?>
-            </div>
-            <div class="content">
-                <h4 class="title"><?php echo the_title()?></h4>
-                <span class="info"><?php the_date()?></span>
-                <div class="body">
-                    <?php substr(the_excerpt(),0,140) ?>
-                    <div class="footer">
-                        <div class="icons">
-                        <?php if (has_images_by_post_id($post)) : ?>
-                            <span class="ms-Icon ms-Icon--Picture" style="color: #50003E"></span>
-                        <?php endif ?>
-                            <span class="ms-Icon ms-Icon--Message" style="color: #002D71"></span>
-                        </div>
-                    </div>
+            <div class="pos-relative bd-blackcell-fs-12 cell-sm-6 border-dashed cell-lg-4 card m-0 <?php echo $has_image?>" style="<?php echo $link_image?>">
+            <?php if($has_image !== ""): ?>
+            <?php endif?>
+                <div class="tags <?php if ($has_image) : ?> <?php endif;?>p-2">
+                    <?php echo get_the_tag_list() ?>
                 </div>
+                <a href="<?php the_permalink() ?>" style="display: block; text-decoration: none;">
+                <div class="content <?php if ($has_image) : ?> <?php endif;?> pl-4 pr-4">
+                    <h4 class="title mt-4"><?php echo the_title()?></h4>
+                    <small><b class="fa fa-calendar"></b>&nbsp;<?php the_date()?></small>
+                    <br>
+                    <small><b class="fa fa-user"></b>&nbsp;<?php the_author()?></small>
+                </div>
+                </a>
             </div>
-            <a class="permalink btn ms-depth-8" href="<?php the_permalink() ?>">Iniciar Leitura</a>
+        <?php endwhile ?>
+        <div class="cell-fs-12 d-flex flex-justify-center p-4 bg-dark">
+            <?php the_posts_pagination(array(
+                'mid_size' => 2,
+                'prev_text' => __('<i class="ms-Icon ms-Icon--ChevronLeft"></i>', 'Anterior'),
+                'next_text' => __('<i class="ms-Icon ms-Icon--ChevronRight"></i>', 'Anterior'),
+                'screen_reader_text' => __(" "),
+            )); ?>
         </div>
-    <?php endwhile ?>
-</div>
-<div class="ms-sm12 <?php echo $page_class?>">
-    <?php the_posts_pagination(array(
-        'mid_size' => 2,
-        'prev_text' => __('<i class="ms-Icon ms-Icon--ChevronLeft"></i>', 'Anterior'),
-        'next_text' => __('<i class="ms-Icon ms-Icon--ChevronRight"></i>', 'Anterior'),
-        'screen_reader_text' => __(" "),
-    )); ?>
+    </div>
 </div>
 <?php get_footer();?>

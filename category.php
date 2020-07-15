@@ -32,7 +32,7 @@ $query = new WP_Query( 'p=' . $stick[0] );
                                     get_background_image_header($post->post_content) != "" 
                                     ? get_background_image_header($post->post_content) : get_post_image($post->post_content) 
                                     :'';?>
-            <div class="pos-relative no-border cell-lg-4 card m-0 <?php echo $has_image?>" style="<?php echo $link_image?>">
+            <div class="pos-relative cell-fs-12 cell-sm-6 cell-lg-4 bd-black border-dashed card m-0 <?php echo $has_image?>" style="<?php echo $link_image?>">
             <?php if($has_image !== ""): ?>
             <?php endif?>
                 <div class="tags <?php if ($has_image) : ?> <?php endif;?>p-2">

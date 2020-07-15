@@ -9,7 +9,7 @@ get_header(); ?>
     <div class="cell-sm-10 cell-xl-8 p-5 p-20-lg bg-white wp_single_post mt-20 ms-depth-4">
         <?php 
         if ( function_exists('yoast_breadcrumb') ) {
-            yoast_breadcrumb( '<p class="breadcrumbs m-2 p-3 border-radius-2">','</p>' );
+            yoast_breadcrumb( '<p class="breadcrumbs m-2 p-3 d-flex flex-justify-center">','</p>' );
         }
         ?>
         <span class="fg-gray">
@@ -21,7 +21,7 @@ get_header(); ?>
         </span>
         <?php echo $post->post_content; ?>
     </div>
-    <div class="cell-sm-10 cell-xl-8 p-5 p-20-lg mt-2">
+    <div class="cell-sm-10 cell-xl-8 p-5 p-20-lg bg-light">
 		<?php comments_template();?>
 	</div>
 </div>

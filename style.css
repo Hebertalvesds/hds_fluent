@@ -25,6 +25,7 @@ body {
 
 .app-bar {
   padding: 1rem;
+  z-index: 2050;
 }
 .app-bar .hamburger {
   z-index: 1050;
@@ -119,11 +120,11 @@ body {
   text-shadow: -2px 0 #23008e, 2px 0px 0 #730035, 0px -2px 0 #ff8100, 0px 0px 3px #4b00ff, 0px 1px 0 #f00;
 }
 
+.categories .has-image {
+  background-size: cover;
+}
 .categories .has-image .content, .categories .has-image .title {
   text-shadow: 1px 2px 6px rgba(51, 51, 51, 0.4);
-}
-.categories .has-image .img {
-  background-size: cover;
 }
 .categories .has-image::before {
   content: "";
@@ -147,6 +148,7 @@ body {
 }
 .categories .card {
   text-transform: uppercase;
+  border-radius: 0px !important;
 }
 .categories .card:hover {
   box-shadow: 0 3.2px 7.2px 0 rgba(0, 0, 0, 0.132), 0 0.6px 1.8px 0 rgba(0, 0, 0, 0.108);
