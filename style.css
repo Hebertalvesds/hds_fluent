@@ -50,7 +50,7 @@ body {
   display: block;
   padding: 0px 10px;
   text-decoration: none;
-  font-size: 1.4rem;
+  font-size: 1.6rem;
 }
 .app-bar .app-bar-menu {
   float: right !important;
@@ -134,7 +134,8 @@ body {
   top: 0;
   width: 100%;
   height: 100%;
-  background: linear-gradient(45deg, #ff6ffb61, rgba(202, 198, 85, 0.26), #00aff02e);
+  transition: all 0.5s linear !important;
+  background: linear-gradient(45deg, #000000, rgba(202, 198, 85, 0.26), #0000009e);
 }
 .categories .tags *[rel=tag] {
   display: inline-block;
@@ -145,22 +146,27 @@ body {
   margin-right: 8px;
   font-size: 0.6rem;
   text-decoration: none;
+  box-shadow: 0 1.6px 3.6px 0 rgba(0, 0, 0, 0.132), 0 0.3px 0.9px 0 rgba(0, 0, 0, 0.108);
 }
 .categories .card {
   text-transform: uppercase;
-  border-radius: 0px !important;
+  border-radius: 4px !important;
+  border-width: 4px !important;
+  box-shadow: 0 1.6px 3.6px 0 rgba(0, 0, 0, 0.132), 0 0.3px 0.9px 0 rgba(0, 0, 0, 0.108);
+  background-blend-mode: luminosity;
 }
 .categories .card:hover {
-  box-shadow: 0 3.2px 7.2px 0 rgba(0, 0, 0, 0.132), 0 0.6px 1.8px 0 rgba(0, 0, 0, 0.108);
+  box-shadow: 0 25.6px 57.6px 0 rgba(0, 0, 0, 0.22), 0 4.8px 14.4px 0 rgba(0, 0, 0, 0.18);
   transform: scale(1.02);
   left: 0;
   top: 0;
   transition: all 0.2s linear;
-  z-index: 1050;
+  z-index: 1020;
+  background-blend-mode: normal;
 }
 .categories .card:hover::before {
   transition: all 0.5s linear !important;
-  background: linear-gradient(45deg, #6fb9ff61, rgba(157, 202, 85, 0.26), #f090002e) !important;
+  background: linear-gradient(45deg, #00000061, rgba(157, 202, 85, 0.26), #ffffff2e) !important;
 }
 
 #menu-social-menu {
@@ -235,9 +241,11 @@ body {
 }
 .light .app-bar {
   background-color: white;
+  border-bottom: 2px solid #0064bb;
 }
 .light .app-bar .brand .title {
-  color: #333333;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
 .light .app-bar-menu li:hover a,
 .light .app-bar-menu .current-menu-item a {

@@ -18,29 +18,33 @@ $query = new WP_Query( 'p=' . $stick[0] );
                                     get_background_image_header($post->post_content) != "" 
                                     ? get_background_image_header($post->post_content) : get_post_image($post->post_content) 
                                     :'';?>
-            <div class="pos-relative bd-blackcell-fs-12 cell-sm-6 border-dashed cell-lg-4 card m-0 <?php echo $has_image?>" style="<?php echo $link_image?>">
-            <?php if($has_image !== ""): ?>
-            <?php endif?>
-                <div class="tags <?php if ($has_image) : ?> <?php endif;?>p-2">
-                    <?php echo get_the_tag_list() ?>
+            <div class="cell-fs-12 cell-sm-6 cell-lg-4 d-flex">
+                <div class="pos-relative bd-transparent border-size-4 cell-fs-12 flex-align-self-start card m-0 <?php echo $has_image?>" style="<?php echo $link_image?>">
+                <?php if($has_image !== ""): ?>
+                <?php endif?>
+                    <div class="tags <?php if ($has_image) : ?> <?php endif;?>p-2">
+                        <?php echo get_the_tag_list() ?>
+                    </div>
+                    <a href="<?php the_permalink() ?>" style="display: block; text-decoration: none;">
+                    <div class="content <?php if ($has_image) : ?> <?php endif;?> pl-4 pr-4">
+                        <h4 class="title mt-4"><?php echo the_title()?></h4>
+                        <small><b class="fa fa-calendar"></b>&nbsp;<?php the_date()?></small>
+                        <br>
+                        <small><b class="fa fa-user"></b>&nbsp;<?php the_author()?></small>
+                    </div>
+                    </a>
                 </div>
-                <a href="<?php the_permalink() ?>" style="display: block; text-decoration: none;">
-                <div class="content <?php if ($has_image) : ?> <?php endif;?> pl-4 pr-4">
-                    <h4 class="title mt-4"><?php echo the_title()?></h4>
-                    <small><b class="fa fa-calendar"></b>&nbsp;<?php the_date()?></small>
-                    <br>
-                    <small><b class="fa fa-user"></b>&nbsp;<?php the_author()?></small>
-                </div>
-                </a>
             </div>
         <?php endwhile ?>
-        <div class="cell-fs-12 d-flex flex-justify-center p-4 bg-dark">
-            <?php the_posts_pagination(array(
-                'mid_size' => 2,
-                'prev_text' => __('<i class="ms-Icon ms-Icon--ChevronLeft"></i>', 'Anterior'),
-                'next_text' => __('<i class="ms-Icon ms-Icon--ChevronRight"></i>', 'Anterior'),
-                'screen_reader_text' => __(" "),
-            )); ?>
+        <div class="p-1 container-fluid">
+            <div class="cell-fs-12 d-flex flex-justify-center p-4 bg-dark border-radius-4">
+                <?php the_posts_pagination(array(
+                    'mid_size' => 2,
+                    'prev_text' => __('<i class="ms-Icon ms-Icon--ChevronLeft"></i>', 'Anterior'),
+                    'next_text' => __('<i class="ms-Icon ms-Icon--ChevronRight"></i>', 'Anterior'),
+                    'screen_reader_text' => __(" "),
+                )); ?>
+            </div>
         </div>
     </div>
 </div>

@@ -21,6 +21,7 @@ $font-normal: "Roboto";
 $font-write: "Roboto Slab";
 $ms-depth-4: 0 1.6px 3.6px 0 rgba(0,0,0,.132), 0 0.3px 0.9px 0 rgba(0,0,0,.108);
 $ms-depth-8: 0 3.2px 7.2px 0 rgba(0,0,0,.132), 0 0.6px 1.8px 0 rgba(0,0,0,.108);
+$ms-depth-64: 0 25.6px 57.6px 0 rgba(0,0,0,.22), 0 4.8px 14.4px 0 rgba(0,0,0,.18);
 
 body{
     padding: 0;
@@ -55,7 +56,7 @@ body{
             display: block;
             padding: 0px 10px;
             text-decoration: none;
-            font-size: 1.4rem;
+            font-size: 1.6rem;
             // text-shadow: -2px 0 #23008e, 
             //     2px 0px 0 #730035, 
             //     0px -2px 0 #ff8100, 
@@ -146,7 +147,8 @@ body{
         top: 0;
         width: 100%;
         height: 100%;
-        background: linear-gradient(45deg, #ff6ffb61, rgba(202, 198, 85, 0.26), #00aff02e);
+        transition: all .5s linear !important;
+        background: linear-gradient(45deg, #000000, rgba(202, 198, 85, 0.26), #0000009e);
     }
     .tags{ 
         *[rel="tag"]{
@@ -158,23 +160,28 @@ body{
             margin-right: 8px;
             font-size: .6rem;
             text-decoration: none;
+            box-shadow: $ms-depth-4;
         }
     }
     .card{
         text-transform: uppercase;
-        border-radius: 0px !important;
+        border-radius: 4px !important;
+        border-width: 4px !important;
+        box-shadow: $ms-depth-4;
+        background-blend-mode: luminosity;
     }
     .card:hover{
-        box-shadow: $ms-depth-8;
+        box-shadow: $ms-depth-64;
         transform: scale(1.02);
         left: 0;
         top: 0;
         transition: all .2s linear;
-        z-index: 1050;
+        z-index: 1020;
+        background-blend-mode: normal;
     }
     .card:hover::before{
         transition: all .5s linear !important;
-        background: linear-gradient(45deg, #6fb9ff61, rgba(157, 202, 85, 0.26), #f090002e) !important;
+        background: linear-gradient(45deg, #00000061, rgba(157, 202, 85, 0.26), #ffffff2e) !important;
     }
 }
 #menu-social-menu{
@@ -245,7 +252,11 @@ body{
     background-color: $primary-light-color;
     .app-bar{
         background-color: rgb(255, 255, 255);
-        .brand .title { color: $primary-black-color; } 
+        border-bottom: 2px solid #0064bb;
+        .brand .title {
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+        } 
     }
     .app-bar-menu{
         li:hover a,
