@@ -44,7 +44,7 @@ function widgets_novos_widgets_init() {
 		'id' => 'left',
 		'before_widget' => '<div>',
 		'after_widget' => '</div>'
-	) );
+	));
 
 	register_sidebar( array(
 		'name' => 'SidebarRight',
@@ -53,15 +53,13 @@ function widgets_novos_widgets_init() {
 		'after_widget' => '</div>',
 		'before_title' => '<h2>',
 		'after_title' => '</h2>',
-	) );
+	));
 
 	register_sidebar(array(
 		'name' => 'Widget Menu',
 		'id' => 'top',
-		'before_widget' => '<div v-shwo="submenu">',
-		'after_widget' => '</div>',
-		'before_title' => '<span class="widget-title" style="display:none;">',
-		'after_title' => '</span>'
+		'before_widget' => '',
+		'after_widget' => ''
 	));
 
 	register_sidebar(array(
@@ -91,7 +89,8 @@ function register_hds_menus(){
 			'top_menu' => _('Header Menu'),
 			'footer_menu' => _('Footer Menu'),
 			'left_menu' => _('Sidebar Menu'),
-			'social_menu'=> _('Social Menu')	
+			'social_menu'=> _('Social Menu'),
+			'blog_menu'=>_('Blog Menu')
 		)
 	);
 }

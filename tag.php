@@ -5,7 +5,7 @@ $stick = get_option('stick_posts');
 $query = new WP_Query( 'p=' . $stick[0] );
 ?>
 <div class="cel-fs-12 <?php echo $page_class?> categories" id="tags">
-    <div class="row">
+    <div class="row p-2">
         <?php 
             if ( function_exists('yoast_breadcrumb') ) {
                 yoast_breadcrumb( '<p class="breadcrumbs d-flex flex-justify-center p-4 m-0 cell-fs-12 text-upper bg-light">','</p>' );

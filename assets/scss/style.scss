@@ -41,6 +41,15 @@ body{
     .app-bar-menu.opened{
         height: 100vh;
     }
+    .brand.fixed{
+        background-color: rgb(51, 51, 51);
+        position: fixed;
+        top: 0;
+        .title{
+            font-size: 1.2rem;
+            transition: all .2s linear;
+        }
+    }
     .brand{
         font-family: $font-condensed;
         line-height: 80px;
@@ -57,6 +66,7 @@ body{
             padding: 0px 10px;
             text-decoration: none;
             font-size: 1.6rem;
+            transition: all .2s linear;
             // text-shadow: -2px 0 #23008e, 
             //     2px 0px 0 #730035, 
             //     0px -2px 0 #ff8100, 
@@ -205,30 +215,37 @@ body{
         display: none;
     }
 }
-.menu-tags-blog-container{
-    display: block;
+*[class*='menu-tags']{
+    display: flex;
     position: relative;
     font-size: .875rem;
-    width: calc(100% - 1rem);
-    margin: 8px auto;
-    border-radius: 2px;
+    width: 100%;
+    border-radius: 4px;
     border: 1px solid #dfdfdf;
-    box-shadow: 0 1.6px 3.6px 0 rgba(0,0,0,.132), 0 0.3px 0.9px 0 rgba(0,0,0,.108);
+    padding: 8px;
+    justify-content: center;
     ul{
         list-style: none;
         margin: 0;
-        li a{
-            padding: 8px 12px;
-            line-height: 2rem;
-            display: block;
-            font-size: 1.2rem;
-            font-family: "Roboto";
-            border-bottom: 1px solid rgba(200, 200, 200, .1);
-            text-decoration: none;
-        }
+        display: inline-flex;
+        li{
+            margin-right: 3px;
+            a{
+                border-radius: 4px;
+                text-align: center;
+                padding: 8px 12px;
+                line-height: 2rem;
+                display: block;
+                font-size: 1rem;
+                font-family: "Roboto";
+                text-decoration: none;
+                transition: all .2s linear;
+            }
+        } 
         li a:hover, li.current-menu-item a{
             text-decoration: none;
             transition: all .2s linear;
+            box-shadow: $ms-depth-4;
         }
     }
 }
@@ -247,16 +264,25 @@ body{
         }
     }
 }
+._mi._image{
+    width: 23.33px;
+    height: 23.33px;
+    margin-right: 0.33rem;
+}
 /*Colors Scheme*/
 .light{
     background-color: $primary-light-color;
     .app-bar{
         background-color: rgb(255, 255, 255);
-        border-bottom: 2px solid #0064bb;
+        border-bottom: 2px solid #ecececb0;
         .brand .title {
-            background-clip: text;
-            -webkit-text-fill-color: transparent;
-        } 
+            color: $primary-black-color;
+        }
+        .brand.fixed{
+            .title{
+                color: $primary-light-color;
+            }
+        }
     }
     .app-bar-menu{
         li:hover a,
@@ -269,15 +295,15 @@ body{
             }
         }
     } 
-    #menu-tags-blog li a:hover, 
-    #menu-tags-blog li.current-menu-item a{
+    .menu li a:hover, 
+    .menu li.current-menu-item a{
         background-color: #004D8C;
         color: $primary-light-color !important;
     }
     #menu-social-menu li a{
         color: $primary-black-color;
     }
-    .menu-tags-blog-container{
+    div[class*='menu-tags']{
         background-color: #ffffff;
         ul li a{
             color: $primary-black-color;
@@ -305,6 +331,7 @@ body{
     }
 }
 // Effecs
+
 //Sizes
 @media screen and (min-width: 0px){
     #categories .has-image .img{

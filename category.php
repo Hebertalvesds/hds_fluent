@@ -5,26 +5,10 @@ $stick = get_option('stick_posts');
 $query = new WP_Query( 'p=' . $stick[0] );
 ?>
 <div class="cel-fs-12 <?php echo $page_class?> categories" id="categories">
+    <div class="row p-0">
+        <?php get_sidebar('top'); ?>
+    </div>
     <div class="row p-2">
-        <!-- <div class="cell-fs-12 cell-lg-3 d-none-sm d-block-lg">
-            <div class="card ms-depth-4 bg-white image-header m-0">
-                <div class="card-header fg-white"
-                     style="background-image: url(http://localhost/wordpress/wp-content/uploads/2020/06/IMG_20170806_142613619-2.jpg)">
-                     Hebert Alves
-                </div>
-                <div class="card-content p-2">
-                    <p>
-                        O teu maior presente é a vida. O que acontecerá com ela é você quem vai decidir. Por tanto a força
-                        para tornar real os sonhos está unicamente em nossas mãos.
-                    </p>
-                </div>
-                <div class="card-footer d-flex flex-justify-center">
-                <?php get_sidebar('social') ?>
-                </div>  
-            </div>
-            <?php get_sidebar('left') ?>
-            
-        </div> -->
         <?php while (have_posts()): 
             the_post()?>
             <?php $has_image = has_images_by_post_id($post) ? 'has-image' : ''; ?>

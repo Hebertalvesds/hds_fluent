@@ -20,7 +20,7 @@
         <?php wp_head(); ?>
         <link rel="stylesheet" href="https://static2.sharepointonline.com/files/fabric/office-ui-fabric-core/11.0.0/css/fabric.min.css" />
         <link rel="stylesheet" type="text/css" href="<?php bloginfo('stylesheet_url') ?>">
-        <link rel="stylesheet" href="https://cdn.metroui.org.ua/v4/css/metro-all.min.css">
+        <link rel="stylesheet" href="https://cdn.metroui.org.ua/v4/css/metro-all.min.css" >
         <?php wp_enqueue_script('app', get_template_directory_uri() . '/assets/js/app.js', array('jquery'), true); ?>
         <title>
                 <?php echo bloginfo('name') ?>

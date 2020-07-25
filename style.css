@@ -34,6 +34,15 @@ body {
 .app-bar .app-bar-menu.opened {
   height: 100vh;
 }
+.app-bar .brand.fixed {
+  background-color: #333333;
+  position: fixed;
+  top: 0;
+}
+.app-bar .brand.fixed .title {
+  font-size: 1.2rem;
+  transition: all 0.2s linear;
+}
 .app-bar .brand {
   font-family: "Roboto Condensed";
   line-height: 80px;
@@ -51,6 +60,7 @@ body {
   padding: 0px 10px;
   text-decoration: none;
   font-size: 1.6rem;
+  transition: all 0.2s linear;
 }
 .app-bar .app-bar-menu {
   float: right !important;
@@ -193,32 +203,39 @@ body {
   display: none;
 }
 
-.menu-tags-blog-container {
-  display: block;
+*[class*=menu-tags] {
+  display: flex;
   position: relative;
   font-size: 0.875rem;
-  width: calc(100% - 1rem);
-  margin: 8px auto;
-  border-radius: 2px;
+  width: 100%;
+  border-radius: 4px;
   border: 1px solid #dfdfdf;
-  box-shadow: 0 1.6px 3.6px 0 rgba(0, 0, 0, 0.132), 0 0.3px 0.9px 0 rgba(0, 0, 0, 0.108);
+  padding: 8px;
+  justify-content: center;
 }
-.menu-tags-blog-container ul {
+*[class*=menu-tags] ul {
   list-style: none;
   margin: 0;
+  display: inline-flex;
 }
-.menu-tags-blog-container ul li a {
+*[class*=menu-tags] ul li {
+  margin-right: 3px;
+}
+*[class*=menu-tags] ul li a {
+  border-radius: 4px;
+  text-align: center;
   padding: 8px 12px;
   line-height: 2rem;
   display: block;
-  font-size: 1.2rem;
+  font-size: 1rem;
   font-family: "Roboto";
-  border-bottom: 1px solid rgba(200, 200, 200, 0.1);
-  text-decoration: none;
-}
-.menu-tags-blog-container ul li a:hover, .menu-tags-blog-container ul li.current-menu-item a {
   text-decoration: none;
   transition: all 0.2s linear;
+}
+*[class*=menu-tags] ul li a:hover, *[class*=menu-tags] ul li.current-menu-item a {
+  text-decoration: none;
+  transition: all 0.2s linear;
+  box-shadow: 0 1.6px 3.6px 0 rgba(0, 0, 0, 0.132), 0 0.3px 0.9px 0 rgba(0, 0, 0, 0.108);
 }
 
 .navigation {
@@ -235,17 +252,25 @@ body {
   font-family: "Roboto";
 }
 
+._mi._image {
+  width: 23.33px;
+  height: 23.33px;
+  margin-right: 0.33rem;
+}
+
 /*Colors Scheme*/
 .light {
   background-color: #f8f8f8;
 }
 .light .app-bar {
   background-color: white;
-  border-bottom: 2px solid #0064bb;
+  border-bottom: 2px solid #ecececb0;
 }
 .light .app-bar .brand .title {
-  background-clip: text;
-  -webkit-text-fill-color: transparent;
+  color: #333333;
+}
+.light .app-bar .brand.fixed .title {
+  color: #f8f8f8;
 }
 .light .app-bar-menu li:hover a,
 .light .app-bar-menu .current-menu-item a {
@@ -254,18 +279,18 @@ body {
 .light .app-bar-menu li a {
   color: #333333 !important;
 }
-.light #menu-tags-blog li a:hover,
-.light #menu-tags-blog li.current-menu-item a {
+.light .menu li a:hover,
+.light .menu li.current-menu-item a {
   background-color: #004D8C;
   color: #f8f8f8 !important;
 }
 .light #menu-social-menu li a {
   color: #333333;
 }
-.light .menu-tags-blog-container {
+.light div[class*=menu-tags] {
   background-color: #ffffff;
 }
-.light .menu-tags-blog-container ul li a {
+.light div[class*=menu-tags] ul li a {
   color: #333333;
 }
 .light .navigation .nav-links a {
