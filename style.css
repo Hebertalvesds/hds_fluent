@@ -12,7 +12,7 @@ Text Domain: HDS Fluent
 This theme, like WordPress, is licensed under the GPL.
 Use it to make something cool, have fun, and share what you've learned with others.
 */
-@import url("https://fonts.googleapis.com/css?family=Roboto+Condensed|Roboto+Slab|Roboto:300&display=swap|Montserrat");
+@import url("https://fonts.googleapis.com/css2?family=Roboto+Condensed&family=Roboto+Slab&family=Roboto&family=Roboto+Mono&display=swap");
 body {
   padding: 0;
   margin: 0;
@@ -21,6 +21,19 @@ body {
 .content-render {
   position: relative;
   margin-top: 80px;
+  min-height: 100vh;
+}
+
+.font-slab {
+  font-family: "Roboto Slab" !important;
+}
+
+.font-normal {
+  font-family: "Roboto" !important;
+}
+
+.font-condensed {
+  font-family: "Roboto Condensed" !important;
 }
 
 .app-bar {
@@ -44,11 +57,12 @@ body {
   transition: all 0.2s linear;
 }
 .app-bar .brand {
-  font-family: "Roboto Condensed";
+  font-family: "Roboto Mono";
   line-height: 80px;
   display: flex;
   align-items: center;
   justify-content: center;
+  box-shadow: 4px 4px #ffe000;
 }
 .app-bar .brand .logo {
   width: 40px;
@@ -59,21 +73,22 @@ body {
   display: block;
   padding: 0px 10px;
   text-decoration: none;
-  font-size: 1.6rem;
+  font-size: 1.2rem;
   transition: all 0.2s linear;
+  text-transform: uppercase;
 }
 .app-bar .app-bar-menu {
   float: right !important;
   display: flex;
   align-items: center;
   height: 52px;
-  font-family: "Roboto Condensed";
+  font-family: "Roboto Mono";
 }
 .app-bar .app-bar-menu li {
   margin-right: 5px;
 }
 .app-bar .app-bar-menu li a {
-  font-size: 1.2rem !important;
+  font-size: 1rem !important;
   border: 1px solid transparent;
 }
 .app-bar .app-bar-menu li a img {
@@ -81,12 +96,21 @@ body {
   height: 23.33px;
   margin-right: 0.33rem;
 }
-.app-bar .app-bar-menu li:hover {
+.app-bar .app-bar-menu li:hover, .app-bar .app-bar-menu .current-menu-item {
   background-color: transparent !important;
 }
-.app-bar .app-bar-menu li:hover a {
-  transition: all 0.2s linear;
-  text-shadow: 0 1.6px 3.6px 0 rgba(0, 0, 0, 0.132), 0 0.3px 0.9px 0 rgba(0, 0, 0, 0.108);
+.app-bar .app-bar-menu li:hover a::after, .app-bar .app-bar-menu .current-menu-item a::after {
+  content: "";
+  position: absolute;
+  height: 4px;
+  width: 100%;
+  left: 0;
+  bottom: 0;
+  background-color: #333333;
+}
+.app-bar .app-bar-menu .current-menu-item a::after {
+  content: "";
+  box-shadow: 2px 2px #ffe000;
 }
 .app-bar .app-bar-menu li:focus, .app-bar .app-bar-menu li a:focus {
   outline: none !important;
@@ -222,13 +246,12 @@ body {
   margin-right: 3px;
 }
 *[class*=menu-tags] ul li a {
-  border-radius: 4px;
   text-align: center;
   padding: 8px 12px;
   line-height: 2rem;
   display: block;
   font-size: 1rem;
-  font-family: "Roboto";
+  font-family: "Roboto Mono";
   text-decoration: none;
   transition: all 0.2s linear;
 }
@@ -258,16 +281,36 @@ body {
   margin-right: 0.33rem;
 }
 
+#footer {
+  border-style: solid;
+  border-top-width: 1px;
+  font-size: 0.8rem;
+}
+#footer ul {
+  list-style: none;
+  margin: 1rem 1rem 1rem 0rem;
+}
+#footer ul li a {
+  font-size: 0.8rem;
+  color: white;
+}
+
+#header-toggle {
+  z-index: 3000 !important;
+}
+
 /*Colors Scheme*/
 .light {
   background-color: #f8f8f8;
 }
 .light .app-bar {
   background-color: white;
-  border-bottom: 2px solid #ecececb0;
+}
+.light .app-bar .brand {
+  background-color: #333333;
 }
 .light .app-bar .brand .title {
-  color: #333333;
+  color: #f8f8f8;
 }
 .light .app-bar .brand.fixed .title {
   color: #f8f8f8;
@@ -281,17 +324,14 @@ body {
 }
 .light .menu li a:hover,
 .light .menu li.current-menu-item a {
-  background-color: #004D8C;
+  background-color: #333333;
   color: #f8f8f8 !important;
-}
-.light #menu-social-menu li a {
-  color: #333333;
 }
 .light div[class*=menu-tags] {
   background-color: #ffffff;
 }
 .light div[class*=menu-tags] ul li a {
-  color: #333333;
+  color: #f8f8f8;
 }
 .light .navigation .nav-links a {
   color: #1A32CC;
