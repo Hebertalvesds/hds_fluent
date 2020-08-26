@@ -222,16 +222,6 @@ body{
     text-decoration: none;
     margin-right: 10px;
 }
-.wp-block-cover, .wp-block-cover-image {
-    position: fixed !important;
-    left: 0;
-    top: 0;
-    z-index: -1;
-    height: 300px;
-    .wp-block-cover__inner-container{
-        display: none;
-    }
-}
 *[class*='menu-tags']{
     display: flex;
     position: relative;
@@ -335,7 +325,7 @@ body{
     div[class*='menu-tags']{
         background-color: #ffffff;
         ul li a{
-            color: $primary-light-color;
+            color: $primary-black-color !important;
         }
     }
     .navigation .nav-links a{

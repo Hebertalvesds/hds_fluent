@@ -5,8 +5,8 @@ if ($hasImgHeader) {
 }
 get_header(); ?>
 <?php get_post(); ?>
-<div class="container-fluid p-0 m-0 d-flex flex-justify-center flex-align-center flex-column">
-    <div class="cell-sm-10 cell-xl-8 p-5 p-20-lg bg-white wp_single_post mt-20 ms-depth-4">
+<div class="container-fluid p-0 m-0 d-flex flex-justify-center flex-align-center flex-column bg-white">
+    <div class="cell-sm-10 cell-xl-8 p-5 p-20-lg bg-white wp_single_post mt-20">
         <?php 
         if ( function_exists('yoast_breadcrumb') ) {
             yoast_breadcrumb( '<p class="breadcrumbs m-2 p-3 d-flex flex-justify-center">','</p>' );
