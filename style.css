@@ -160,6 +160,9 @@ body {
 .categories .has-image .content, .categories .has-image .title {
   text-shadow: 1px 2px 6px rgba(51, 51, 51, 0.4);
 }
+.categories .has-image h4.title {
+  text-shadow: 1px 2px 1px #000000, 2px 3px 1px #ffffff;
+}
 .categories .has-image::before {
   content: "";
   position: absolute;
@@ -169,7 +172,6 @@ body {
   width: 100%;
   height: 100%;
   transition: all 0.5s linear !important;
-  background: linear-gradient(45deg, #000000, rgba(202, 198, 85, 0.26), #0000009e);
 }
 .categories .tags *[rel=tag] {
   display: inline-block;
@@ -187,7 +189,6 @@ body {
   border-radius: 4px !important;
   border-width: 4px !important;
   box-shadow: 0 1.6px 3.6px 0 rgba(0, 0, 0, 0.132), 0 0.3px 0.9px 0 rgba(0, 0, 0, 0.108);
-  background-blend-mode: luminosity;
 }
 .categories .card:hover {
   box-shadow: 0 25.6px 57.6px 0 rgba(0, 0, 0, 0.22), 0 4.8px 14.4px 0 rgba(0, 0, 0, 0.18);
@@ -200,7 +201,6 @@ body {
 }
 .categories .card:hover::before {
   transition: all 0.5s linear !important;
-  background: linear-gradient(45deg, #00000061, rgba(157, 202, 85, 0.26), #ffffff2e) !important;
 }
 
 #menu-social-menu {
