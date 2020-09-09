@@ -30,7 +30,7 @@ $query = new WP_Query( 'p=' . $stick[0] );
                         <br>
                         <small><b class="fa fa-user"></b>&nbsp;<?php the_author()?></small>
                     </div>
-                    <section style="text-transform: initial" class="bg-white no-shadow fg-dark p-3 border-radius-4 font-slab <?php if(!empty($has_image)): ?> mt-3" <?php endif;?>">
+                    <section style="text-transform: initial" class="d-none d-block-md bg-white no-shadow fg-dark p-3 border-radius-4 font-slab <?php if(!empty($has_image)): ?> mt-3" <?php endif;?>">
                         <?php the_excerpt() ?>
                     </section>
                     </a>
