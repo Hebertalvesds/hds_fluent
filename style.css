@@ -70,7 +70,10 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
-  box-shadow: 4px 4px #ffe000;
+  border-bottom-left-radius: 0.25rem;
+  border-bottom-right-radius: 0.25rem;
+  position: fixed !important;
+  top: 0;
 }
 .app-bar .brand .logo {
   width: 40px;
@@ -115,10 +118,11 @@ body {
   left: 0;
   bottom: 0;
   background-color: #333333;
+  border-radius: 50rem;
 }
 .app-bar .app-bar-menu .current-menu-item a::after {
   content: "";
-  box-shadow: 2px 2px #ffe000;
+  box-shadow: 0 3.2px 7.2px 0 rgba(0, 0, 0, 0.132), 0 0.6px 1.8px 0 rgba(0, 0, 0, 0.108);
 }
 .app-bar .app-bar-menu li:focus, .app-bar .app-bar-menu li a:focus {
   outline: none !important;
@@ -197,6 +201,7 @@ body {
   border-radius: 4px !important;
   border-width: 4px !important;
   box-shadow: 0 1.6px 3.6px 0 rgba(0, 0, 0, 0.132), 0 0.3px 0.9px 0 rgba(0, 0, 0, 0.108);
+  border: none !important;
 }
 .categories .card:hover {
   box-shadow: 0 25.6px 57.6px 0 rgba(0, 0, 0, 0.22), 0 4.8px 14.4px 0 rgba(0, 0, 0, 0.18);
@@ -308,7 +313,7 @@ body {
   background-color: white;
 }
 .light .app-bar .brand {
-  background-color: #333333;
+  background-color: #ff4b33;
 }
 .light .app-bar .brand .title {
   color: #f8f8f8;
@@ -318,7 +323,7 @@ body {
 }
 .light .app-bar-menu li:hover a,
 .light .app-bar-menu .current-menu-item a {
-  color: #0064a7 !important;
+  color: #ff4b33 !important;
 }
 .light .app-bar-menu li a {
   color: #333333 !important;

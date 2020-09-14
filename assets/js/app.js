@@ -8,7 +8,7 @@ function HeaderHide() {
     let brand = document.getElementsByClassName('brand')[0];
 
     if(window.scrollY >= 50){
-        header.style = "padding: 1px; top: -54px; transition: all .2s linear; border-bottom: 6px solid #ffe000";
+        header.style = "padding: 1px; top: -54px; transition: all .2s linear;";
         brand.classList.add('fixed');
     }
     else{
