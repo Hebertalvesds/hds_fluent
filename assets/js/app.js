@@ -1,18 +1,24 @@
 
+let toggle = document.getElementById('toggle');
+let scrollYBefore = window.scrollY;
+
 document.addEventListener('scroll',()=>{
     HeaderHide();
 });
 
+toggle.addEventListener('change', ()=>{
+    document.body.style = (toggle.checked) ? "position:fixed" : "position:inherit";
+})
+
 function HeaderHide() {
     let header = document.getElementsByTagName('header')[0];
-    let brand = document.getElementsByClassName('brand')[0];
-
-    if(window.scrollY >= 50){
-        header.style = "padding: 1px; top: -54px; transition: all .2s linear;";
-        brand.classList.add('fixed');
+    
+    if(window.scrollY > scrollYBefore){
+        header.classList.add("none");
+        scrollYBefore = window.scrollY;
     }
     else{
-        brand.classList.remove('fixed');
-        header.style = "padding: 1rem; top: 0px; transition: all .2s linear";
+        header.classList.remove('none');
+        scrollYBefore = window.scrollY;
     }
 }

@@ -5,10 +5,10 @@ $stick = get_option('stick_posts');
 $query = new WP_Query( 'p=' . $stick[0] );
 ?>
 <div class="cel-fs-12 <?php echo $page_class?> categories" id="categories">
-    <div class="row p-0">
+    <div class="row p-0 m-0">
         <?php get_sidebar('top'); ?>
     </div>
-    <div class="row p-2">
+    <div class="row p-1 m-0">
         <?php while (have_posts()): 
             the_post()?>
             <?php $has_image = has_images_by_post_id($post) ? 'has-image' : ''; ?>

@@ -31,7 +31,6 @@ body{
 }
 .content-render{
     position: relative;
-    margin-top: 80px;
     min-height: 100vh;
 }
 .font-slab{
@@ -50,19 +49,17 @@ body{
     font-family: "Comfortaa";
 }
 .app-bar{
-    padding: 1rem;
+    padding: .5rem;
     z-index: 2050;
-    .hamburger{
-        z-index: 1050;
-        margin: 1rem;
-    }
-    .app-bar-menu.opened{
-        height: 100vh;
+    min-height: 80px;
+    &.none{
+        margin-top: -90px;
     }
     .brand.fixed{
         background-color: rgb(51, 51, 51);
         position: fixed;
         top: 0;
+        left:0;
         .title{
             font-size: 1.2rem;
             transition: all .2s linear;
@@ -74,9 +71,6 @@ body{
         display: flex;
         align-items: center;
         justify-content: center;
-        border-bottom-left-radius: .25rem;
-        border-bottom-right-radius: .25rem;
-        position: fixed !important;
         top: 0;
         .logo{
             width: 40px;
@@ -93,34 +87,41 @@ body{
         }
     }
     .app-bar-menu{
+        opacity: 0;
+        visibility: hidden;
         float: right !important;
         display: flex;
         align-items: center;
         height: 52px;
         font-family: $font-condensed;
+        position: fixed !important;
+        top: 0;
+        left: 0;
+        background-color: $colored !important;
+        height: 100vh;
+        width: 100vw;
+        transition: all .3s ease-in;
+        justify-content: center;
         li{
             margin-right: 5px;
+            transform: scaleY(0);
+            transition: all .3s linear;
             a{
-                font-size: 1rem !important;
+                font-size: 1rem;
                 border: 1px solid transparent;
-                img{
-                    width: 23.33px;
-                    height: 23.33px;
-                    margin-right: .33rem;
-                }
             }
-        }
-        li:hover, .current-menu-item{
-            background-color: transparent !important;
-            a::after{
-                content: "";
-                position: absolute;
-                height: 4px;
-                width: 100%;
-                left: 0;
-                bottom: 0;
-                background-color: rgb(51, 51, 51);
-                border-radius: 50rem;
+            &:hover, &.current-menu-item{
+                background-color: transparent !important;
+                a::after{
+                    content: "";
+                    position: absolute;
+                    height: 4px;
+                    width: 100%;
+                    left: 0;
+                    bottom: 0;
+                    background-color: rgb(51, 51, 51);
+                    border-radius: 50rem;
+                }
             }
         }
         .current-menu-item a::after{ 
@@ -308,6 +309,64 @@ body{
 .c-label{
     font-family: $font-condensed;
 }
+#toggle{
+    display: none;
+    position: absolute;
+    z-index: 3000;
+    &:checked{
+        &~* .app-bar-menu{
+            opacity: 1;
+            visibility: visible;
+            li{
+                transform: scaleY(1);
+                @for $i from 1 through 4 {
+                    $t: $i * 0.1;
+                    &:nth-child(#{$i}) {
+                      transition:all 0.3s cubic-bezier(.6,0,.8,1.5) #{$t}s; 
+                    }
+                  }
+            }
+        }
+        &+.brand{
+
+        }
+        &+.toggle-btn{
+            background-color: #fff;
+            .bar
+            {
+                background-color: $colored;
+                &:nth-child(3){ transform: translateY(-7px) rotate(-45deg); }
+                &:nth-child(1){ transform: translateY(10px) rotate(45deg);}
+                &:nth-child(2){ transform: translateY(-90px) }
+            }
+        }
+    }
+}
+.toggle-btn{
+    &.fixed{
+        margin-top:-8px;
+    }
+    position: absolute;
+    top: 0;
+    right: 0;
+    z-index: 3010;
+    cursor: pointer;
+    width: 52px;
+    height: 52px;
+    background-color: $colored;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    transition: all .3s ease-in-out;
+    .bar{
+        width:30px;
+        height:.187rem;
+        margin:.187rem auto;
+        background-color:#fff;
+        transition:all 0.3s ease-in-out;
+        border-radius: 50rem;
+    }
+}
 /*Colors Scheme*/
 .light{
     background-color: $primary-light-color;
@@ -326,7 +385,7 @@ body{
     .app-bar-menu{
         li:hover a,
         .current-menu-item a{
-            color: $colored !important;
+            color: #ffffff !important;
         }
         li{
             a{
@@ -366,6 +425,7 @@ body{
         background-color: #000000;
     }
 }
+
 // Effecs
 
 //Sizes
@@ -373,9 +433,23 @@ body{
     #categories .has-image .img{
         height: 100px;
     }
+    .app-bar-menu{
+        li{
+            a{
+                font-size: 1.3rem !important;
+            }
+        }
+    }
 }
 @media screen and (min-width: 768px){
     #categories .has-image .img{
         height: 100%;
+    }
+    .app-bar-menu{
+        li{
+            a{
+                font-size: 1.6rem !important;
+            }
+        }
     }
 }

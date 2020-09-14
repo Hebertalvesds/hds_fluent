@@ -20,7 +20,6 @@ body {
 
 .content-render {
   position: relative;
-  margin-top: 80px;
   min-height: 100vh;
 }
 
@@ -45,20 +44,18 @@ body {
 }
 
 .app-bar {
-  padding: 1rem;
+  padding: 0.5rem;
   z-index: 2050;
+  min-height: 80px;
 }
-.app-bar .hamburger {
-  z-index: 1050;
-  margin: 1rem;
-}
-.app-bar .app-bar-menu.opened {
-  height: 100vh;
+.app-bar.none {
+  margin-top: -90px;
 }
 .app-bar .brand.fixed {
   background-color: #333333;
   position: fixed;
   top: 0;
+  left: 0;
 }
 .app-bar .brand.fixed .title {
   font-size: 1.2rem;
@@ -70,9 +67,6 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
-  border-bottom-left-radius: 0.25rem;
-  border-bottom-right-radius: 0.25rem;
-  position: fixed !important;
   top: 0;
 }
 .app-bar .brand .logo {
@@ -89,28 +83,35 @@ body {
   text-transform: uppercase;
 }
 .app-bar .app-bar-menu {
+  opacity: 0;
+  visibility: hidden;
   float: right !important;
   display: flex;
   align-items: center;
   height: 52px;
   font-family: "Roboto Condensed";
+  position: fixed !important;
+  top: 0;
+  left: 0;
+  background-color: #ff4b33 !important;
+  height: 100vh;
+  width: 100vw;
+  transition: all 0.3s ease-in;
+  justify-content: center;
 }
 .app-bar .app-bar-menu li {
   margin-right: 5px;
+  transform: scaleY(0);
+  transition: all 0.3s linear;
 }
 .app-bar .app-bar-menu li a {
-  font-size: 1rem !important;
+  font-size: 1rem;
   border: 1px solid transparent;
 }
-.app-bar .app-bar-menu li a img {
-  width: 23.33px;
-  height: 23.33px;
-  margin-right: 0.33rem;
-}
-.app-bar .app-bar-menu li:hover, .app-bar .app-bar-menu .current-menu-item {
+.app-bar .app-bar-menu li:hover, .app-bar .app-bar-menu li.current-menu-item {
   background-color: transparent !important;
 }
-.app-bar .app-bar-menu li:hover a::after, .app-bar .app-bar-menu .current-menu-item a::after {
+.app-bar .app-bar-menu li:hover a::after, .app-bar .app-bar-menu li.current-menu-item a::after {
   content: "";
   position: absolute;
   height: 4px;
@@ -305,6 +306,72 @@ body {
   font-family: "Roboto Condensed";
 }
 
+#toggle {
+  display: none;
+  position: absolute;
+  z-index: 3000;
+}
+#toggle:checked ~ * .app-bar-menu {
+  opacity: 1;
+  visibility: visible;
+}
+#toggle:checked ~ * .app-bar-menu li {
+  transform: scaleY(1);
+}
+#toggle:checked ~ * .app-bar-menu li:nth-child(1) {
+  transition: all 0.3s cubic-bezier(0.6, 0, 0.8, 1.5) 0.1s;
+}
+#toggle:checked ~ * .app-bar-menu li:nth-child(2) {
+  transition: all 0.3s cubic-bezier(0.6, 0, 0.8, 1.5) 0.2s;
+}
+#toggle:checked ~ * .app-bar-menu li:nth-child(3) {
+  transition: all 0.3s cubic-bezier(0.6, 0, 0.8, 1.5) 0.3s;
+}
+#toggle:checked ~ * .app-bar-menu li:nth-child(4) {
+  transition: all 0.3s cubic-bezier(0.6, 0, 0.8, 1.5) 0.4s;
+}
+#toggle:checked + .toggle-btn {
+  background-color: #fff;
+}
+#toggle:checked + .toggle-btn .bar {
+  background-color: #ff4b33;
+}
+#toggle:checked + .toggle-btn .bar:nth-child(3) {
+  transform: translateY(-7px) rotate(-45deg);
+}
+#toggle:checked + .toggle-btn .bar:nth-child(1) {
+  transform: translateY(10px) rotate(45deg);
+}
+#toggle:checked + .toggle-btn .bar:nth-child(2) {
+  transform: translateY(-90px);
+}
+
+.toggle-btn {
+  position: absolute;
+  top: 0;
+  right: 0;
+  z-index: 3010;
+  cursor: pointer;
+  width: 52px;
+  height: 52px;
+  background-color: #ff4b33;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  transition: all 0.3s ease-in-out;
+}
+.toggle-btn.fixed {
+  margin-top: -8px;
+}
+.toggle-btn .bar {
+  width: 30px;
+  height: 0.187rem;
+  margin: 0.187rem auto;
+  background-color: #fff;
+  transition: all 0.3s ease-in-out;
+  border-radius: 50rem;
+}
+
 /*Colors Scheme*/
 .light {
   background-color: #f8f8f8;
@@ -323,7 +390,7 @@ body {
 }
 .light .app-bar-menu li:hover a,
 .light .app-bar-menu .current-menu-item a {
-  color: #ff4b33 !important;
+  color: #ffffff !important;
 }
 .light .app-bar-menu li a {
   color: #333333 !important;
@@ -363,10 +430,18 @@ body {
   #categories .has-image .img {
     height: 100px;
   }
+
+  .app-bar-menu li a {
+    font-size: 1.3rem !important;
+  }
 }
 @media screen and (min-width: 768px) {
   #categories .has-image .img {
     height: 100%;
+  }
+
+  .app-bar-menu li a {
+    font-size: 1.6rem !important;
   }
 }
 

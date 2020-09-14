@@ -21,7 +21,7 @@
         'orderby' => 'DESC',
         'cat' => 3
     );
-    query_posts( $filter )
+    query_posts( $filter );
 ?>
     <div class="container">
         <?php while(have_posts()):?>

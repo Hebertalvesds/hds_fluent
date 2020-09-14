@@ -1,5 +1,6 @@
 <?php get_header();?>
-<?php 
+<?php
+    add_theme_support( 'wp-block-styles' );
     get_post();
     echo $post->post_content;
 ?>

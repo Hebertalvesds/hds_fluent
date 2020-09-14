@@ -28,8 +28,14 @@
     </head>
     <body class="light" data-role="touch">
     <div>
-    <header data-role="app-bar" data-expand-point="md">
+    <header class="app-bar" data-expand-point="md">
         <div class="container">
+            <input type="checkbox" id="toggle"/>
+            <label class="toggle-btn ms-depth-4" for="toggle">
+                <div class="bar"></div>
+                <div class="bar"></div>
+                <div class="bar"></div>
+            </label>
             <?php get_template_part( 'template-parts/header/header', 'brand' ) ?>
             <?php get_template_part( 'template-parts/navigation/navigation', 'top' ); ?>
         </div>
