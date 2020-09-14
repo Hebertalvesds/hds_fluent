@@ -68,7 +68,7 @@ body{
         }
     }
     .brand{
-        font-family: $font-mono;
+        font-family: $font-condensed !important;
         line-height: 80px;
         display: flex;
         align-items: center;
@@ -93,7 +93,7 @@ body{
         display: flex;
         align-items: center;
         height: 52px;
-        font-family: "Roboto Mono";
+        font-family: $font-condensed;
         li{
             margin-right: 5px;
             a{
@@ -251,7 +251,7 @@ body{
                 line-height: 2rem;
                 display: block;
                 font-size: 1rem;
-                font-family: $font-mono;
+                font-family: $font-condensed;
                 text-decoration: none;
                 transition: all .2s linear;
             }
@@ -298,6 +298,9 @@ body{
 }
 #header-toggle{
     z-index: 3000 !important;
+}
+.c-label{
+    font-family: $font-condensed;
 }
 /*Colors Scheme*/
 .light{
